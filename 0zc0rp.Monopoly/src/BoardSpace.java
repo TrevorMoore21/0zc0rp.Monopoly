@@ -1,5 +1,5 @@
 
 public class BoardSpace
 	{
-		public int price = 123;
+public int price = 123;
 	}
