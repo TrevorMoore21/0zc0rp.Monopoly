@@ -7,8 +7,9 @@ public class Properties extends BoardSpace
 		private int twoHouseRent;
 		private int threeHouseRent;
 		private int hotelRent;
+		private String color;
 		
-		public Properties(boolean d , int br , int or , int tr , int thr , int hr)
+		public Properties(boolean d , int br , int or , int tr , int thr , int hr, String c)
 		{
 			developing = d;
 			basicRent = br;
@@ -16,7 +17,18 @@ public class Properties extends BoardSpace
 			twoHouseRent = tr;
 			threeHouseRent = thr;
 			hotelRent = hr;
+			c = color;
 		}
+
+		public String getColor()
+			{
+				return color;
+			}
+
+		public void setColor(String color)
+			{
+				this.color = color;
+			}
 
 		public boolean isDeveloping()
 			{
