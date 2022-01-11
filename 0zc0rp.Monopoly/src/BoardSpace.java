@@ -1,6 +1,17 @@
 
 public class BoardSpace
 	{
+		private String type;
+		public String getType()
+			{
+				return type;
+			}
+
+		public void setType(String type)
+			{
+				this.type = type;
+			}
+
 		private int cost;
 		private String owner;
 		private int location;
@@ -8,8 +19,9 @@ public class BoardSpace
 		public BoardSpace()
 		{}
 		
-		public BoardSpace(int c, String o, int l)
+		public BoardSpace(String t , int c, String o, int l)
 		{
+			type = t;
 			cost = c;
 			owner = o;
 			location = l;

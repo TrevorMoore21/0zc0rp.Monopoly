@@ -11,11 +11,16 @@ public class MonopDriver
 				int[] board = new int[40];
 				
 				Scanner file = new Scanner(new File( "" ));
-			      int numberOfLines = file.nextInt();      
+			      int numberOfLines = 40;
 			      file.nextLine();
 			      for( int i = 0; i < numberOfLines; i++ )
 			          {
-			        	  //the txt file will be structured as follows:
+			        	  /*the txt file will be structured as follows:
+			        	   *each line will be one square
+			        	   *type cost owner location
+			        	   *then whatever applies to each thing (properties or taxes etc.)
+			        	  */
+			        	  
 			          }
 			}
 
