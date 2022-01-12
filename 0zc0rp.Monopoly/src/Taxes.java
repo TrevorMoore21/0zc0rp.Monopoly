@@ -1,13 +1,34 @@
 public class Taxes extends BoardSpace
 	{
-		private String propertyTax;
-		private String luxuryTax;
-		
-		public void Properties(String p, String l)
+			private String propertyTaxes;
+			private String luxuryTaxes;
+			
+			public Taxes(String p, String l)
 			{
-				propertyTax = p;
-				luxuryTax = l;
+				propertyTaxes = p;
+				luxuryTaxes = l;
 			}
-		
-		
+
+			public String getPropertyTaxes()
+				{
+					return propertyTaxes;
+				}
+
+			public void setPropertyTaxes(String propertyTaxes)
+				{
+					this.propertyTaxes = propertyTaxes;
+				}
+
+			public String getLuxuryTaxes()
+				{
+					return luxuryTaxes;
+				}
+
+			public void setLuxuryTaxes(String luxuryTaxes)
+				{
+					this.luxuryTaxes = luxuryTaxes;
+				}
+			
 	}
+			
+
