@@ -17,7 +17,7 @@ public class Properties extends BoardSpace
 			twoHouseRent = tr;
 			threeHouseRent = thr;
 			hotelRent = hr;
-			c = color;
+			color = c;
 		}
 
 		public String getColor()
