@@ -10,8 +10,15 @@ public class Properties extends BoardSpace
 		private int hotelRent;
 		private String color;
 		
-		public Properties(boolean d , int br , int hh, int or , int tr , int thr , int hr, String c)
+
+		public Properties(String t,  String n, int c, String o, int l, boolean d , int br , int or , int tr , int thr , int hr, String co)
+
 		{
+			setType(t);
+			setName(n);
+			setCost(c);
+			setOwner(o);
+			setLocation(l);
 			developing = d;
 			basicRent = br;
 			houseHotelPrice = hh;
@@ -19,7 +26,9 @@ public class Properties extends BoardSpace
 			twoHouseRent = tr;
 			threeHouseRent = thr;
 			hotelRent = hr;
-			color = c;
+
+			co = color;
+
 		}
 
 		public int getHouseHotelPrice()
