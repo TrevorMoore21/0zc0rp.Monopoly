@@ -24,7 +24,7 @@ public class MonopDriver
 			        	  */
 			        	  if(file.next().equals("Property"))
 			        		  {
-			        			  BoardSpace 
+			        			  board[i] = new();
 			        		  }
 			          }
 			}
