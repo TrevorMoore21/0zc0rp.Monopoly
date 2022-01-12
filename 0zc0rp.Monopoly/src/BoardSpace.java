@@ -1,7 +1,22 @@
 
 public class BoardSpace
 	{
-		private String type;
+		private String type, name, owner;
+		private int cost, location;
+		
+		public BoardSpace()
+		{}
+		
+		public BoardSpace(String t , String n, int c, String o, int l)
+		{
+			type = t;
+			name = n;
+			cost = c;
+			owner = o;
+			location = l;
+		}
+		
+
 		public String getType()
 			{
 				return type;
@@ -11,21 +26,15 @@ public class BoardSpace
 			{
 				this.type = type;
 			}
+		public String getName()
+			{
+				return name;
+			}
 
-		private int cost;
-		private String owner;
-		private int location;
-		
-		public BoardSpace()
-		{}
-		
-		public BoardSpace(String t , int c, String o, int l)
-		{
-			type = t;
-			cost = c;
-			owner = o;
-			location = l;
-		}
+		public void setName(String name)
+			{
+				this.name = name;
+			}
 
 		public int getCost()
 			{
