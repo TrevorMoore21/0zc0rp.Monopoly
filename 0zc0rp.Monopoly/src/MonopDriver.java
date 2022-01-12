@@ -24,7 +24,7 @@ public class MonopDriver
 			        	  */
 			        	  if(file.next().equals("Property"))
 			        		  {
-			        			  board[i] = new();
+			        			  board[i] = new Properties(file.nextBoolean(), file.nextInt(), file.nextInt(), file.nextInt(), file.nextInt(), file.nextInt(), file.next());
 			        		  }
 			          }
 			}
