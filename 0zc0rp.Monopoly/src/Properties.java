@@ -11,10 +11,9 @@ public class Properties extends BoardSpace
 		private String color;
 		
 
-		public Properties(String t,  String n, int c, String o, int l, boolean d , int br , int hh, int or , int tr , int thr , int hr, String co)
+		public Properties(String n, int c, String o, int l, boolean d , int br , int hh, int or , int tr , int thr , int hr, String co)
 
 		{
-			setType(t);
 			setName(n);
 			setCost(c);
 			setOwner(o);

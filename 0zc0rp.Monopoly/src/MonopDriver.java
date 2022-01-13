@@ -24,7 +24,50 @@ public class MonopDriver
 			        	  */
 			        	  if(file.next().equals("Property"))
 			        		  {
-			        			  board[i] = new Properties(file.next(), file.next(), file.nextInt(), file.next(), file.nextInt(), file.nextBoolean(), file.nextInt(), file.nextInt(), file.nextInt(), file.nextInt(), file.nextInt(), file.next());
+			        			  board[i] = new Properties(file.next(), 
+			        					  file.nextInt(), 
+			        					  file.next(), 
+			        					  file.nextInt(), 
+			        					  file.nextBoolean(), 
+			        					  file.nextInt(), 
+			        					  file.nextInt(), 
+			        					  file.nextInt(), 
+			        					  file.nextInt(), 
+			        					  file.nextInt(), 
+			        					  file.nextInt(), 
+			        					  file.next());
+			        		  }
+			        	  
+			        	  else if(file.next().equals("Railroad"))
+			        		  {
+			        			  board[i] = new Railroads(file.next(),
+			        					  file.nextInt(), 
+			        					  file.next(), 
+			        					  file.nextInt(), 
+			        					  file.nextInt(), 
+			        					  file.nextInt(), 
+			        					  file.nextInt(), 
+			        					  file.nextInt());
+			        		  }
+			        	  
+			        	  else if(file.next().equals("Taxes"))
+			        		  {
+			        			  board[i] = new Taxes(file.next(), 
+			        					  file.nextInt(), 
+			        					  file.next(), 
+			        					  file.nextInt(), 
+			        					  file.next(), 
+			        					  file.next());
+			        		  }
+			        	  
+			        	  else if(file.next().equals("Utilities"))
+			        		  {
+			        			  board[i] = new Utilities();
+			        		  }
+			        	  
+			        	  else if(file.next().equals("Other"))
+			        		  {
+			        			  board[i] = new Other();
 			        		  }
 			          }
 			}
