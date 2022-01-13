@@ -3,10 +3,14 @@ public class Taxes extends BoardSpace
 			private String propertyTaxes;
 			private String luxuryTaxes;
 			
-			public Taxes(String p, String l)
+			public Taxes(String n, int c, String o, int l, String p, String lT)
 			{
+				setName(n);
+				setCost(c);
+				setOwner(o);
+				setLocation(l);
 				propertyTaxes = p;
-				luxuryTaxes = l;
+				luxuryTaxes = lT;
 			}
 
 			public String getPropertyTaxes()
