@@ -4,15 +4,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class MonopDriver
-	{
-
+	{	
+		
+		static BoardSpace[] board = new BoardSpace[40];
+		
 		public static void main(String[] args) throws FileNotFoundException
 			{
-				
-				
-				Scanner file = new Scanner(new File( "" ));
-			      int numberOfLines = file.nextInt();
-			      BoardSpace[] board = new BoardSpace[numberOfLines];
+				Scanner file = new Scanner(new File( "AmericanMonopoly.txt" ));
+				int numberOfLines = file.nextInt();
 			      file.nextLine();
 			      for( int i = 0; i < numberOfLines; i++ )
 			          {
@@ -34,7 +33,8 @@ public class MonopDriver
 			        					  file.nextInt(), 
 			        					  file.nextInt(), 
 			        					  file.nextInt(), 
-			        					  file.nextInt(), 
+			        					  file.nextInt(),
+			        					  0,
 			        					  file.next());
 			        		  }
 			        	  
@@ -50,26 +50,37 @@ public class MonopDriver
 			        					  file.nextInt());
 			        		  }
 			        	  
-			        	  else if(file.next().equals("Taxes"))
-			        		  {
-			        			  board[i] = new Taxes(file.next(), 
-			        					  file.nextInt(), 
-			        					  file.next(), 
-			        					  file.nextInt(), 
-			        					  file.next(), 
-			        					  file.next());
-			        		  }
-			        	  
 			        	  else if(file.next().equals("Utilities"))
 			        		  {
-			        			  board[i] = new Utilities();
+			        			  board[i] = new Utilities(file.next(),
+			        					  file.nextInt(),
+			        					  file.next(),
+			        					  file.nextInt(),
+			        					  DiceRoller.rollDice(2,6)*4,
+			        					  DiceRoller.rollDice(2,6)*10);
 			        		  }
-			        	  
-			        	  else if(file.next().equals("Other"))
+			        	  else
 			        		  {
-			        			  board[i] = new Other();
+			        			  board[i] = new BoardSpace(file.next(),
+			        					  file.next(),
+			        					  file.nextInt(),
+			        					  file.next(),
+			        					  file.nextInt());
 			        		  }
 			          }
+			      
+			      Player.greetPlayer();
+			      while(Player.stillPlaying == true)
+			    	  {
+			    		  if(Player.inJail == false)
+			    			  {
+			    				  Player.turnMenu();
+			    			  }
+			    		  else
+			    			  {
+			    				  Player.inJailTurn();
+			    			  }
+			    	  }
 			}
 
 	}

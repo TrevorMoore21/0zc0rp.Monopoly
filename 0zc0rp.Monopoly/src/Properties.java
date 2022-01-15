@@ -8,11 +8,10 @@ public class Properties extends BoardSpace
 		private int twoHouseRent;
 		private int threeHouseRent;
 		private int hotelRent;
+		private int numberOfHousesOwned;
 		private String color;
-		
 
-		public Properties(String n, int c, String o, int l, boolean d , int br , int hh, int or , int tr , int thr , int hr, String co)
-
+		public Properties(String n, int c, String o, int l, boolean d , int br , int hh, int or , int tr , int thr , int hr, int nOH, String co)
 		{
 			setName(n);
 			setCost(c);
@@ -25,11 +24,19 @@ public class Properties extends BoardSpace
 			twoHouseRent = tr;
 			threeHouseRent = thr;
 			hotelRent = hr;
-
-			co = color;
-
+			numberOfHousesOwned = nOH;
+			color = co;
 		}
+		
+		public int getNumberOfHousesOwned()
+			{
+				return numberOfHousesOwned;
+			}
 
+		public void setNumberOfHousesOwned(int numberOfHousesOwned)
+			{
+				this.numberOfHousesOwned = numberOfHousesOwned;
+			}
 		public int getHouseHotelPrice()
 			{
 				return houseHotelPrice;
