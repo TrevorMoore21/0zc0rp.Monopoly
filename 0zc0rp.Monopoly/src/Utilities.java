@@ -33,6 +33,6 @@ public class Utilities extends BoardSpace
 			{
 				this.twoOwnedRent = twoOwnedRent;
 			}
-		
+		// Spongebob is done
 		
 	}
