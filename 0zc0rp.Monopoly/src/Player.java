@@ -265,15 +265,47 @@ public class Player
 							playerMoney -= MonopDriver.board[playerLocation].getCost();;
 						}
 					
-					//How to code cards? aakjdfgals
-					/*else if(MonopDriver.board[playerLocation].getName().equals("Chance"))
+					
+					else if(MonopDriver.board[playerLocation].getName().equals("Chance"))
 						{
+							int chanceNumber = (int) (Math.random() * 3) + 1;
+							if(chanceNumber == 1)
+								{
+							System.out.println("You're wife left you. Give 50% of your money to her.");
+							playerMoney = playerMoney / 2;
+								}
 							
+							else if(chanceNumber == 2)
+								{
+									System.out.println("You got your secretary pregnant. Pay $50.");
+									playerMoney = playerMoney - 50;
+								}
+							else
+								{
+									System.out.println("You found $100 on the street.");
+									playerMoney = playerMoney + 100;
+								}
 						}
 					else if(MonopDriver.board[playerLocation].getName().equals("Community Chest"))
 						{
+							int chestNumber = (int) (Math.random() * 3) + 1;
+							if(chestNumber == 1)
+								{
+							System.out.println("Your dog needs a surgery. Pay the vet $100.");
+							playerMoney = playerMoney / 2;
+								}
 							
-						}*/
+							else if(chestNumber == 2)
+								{
+									System.out.println("You have turned to a life of crime. You mugged a teenage girl for $35.");
+									playerMoney = playerMoney + 35;
+								}
+							else
+								{
+									System.out.println("You bought the Fortnite battle pass ofr $10.");
+									playerMoney = playerMoney - 10;
+								}
+						}
 					
 				}
 			
