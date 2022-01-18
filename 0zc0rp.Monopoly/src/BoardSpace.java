@@ -11,8 +11,8 @@ public class BoardSpace
 		{
 			type = t;
 			name = n;
-			cost = c;
 			owner = o;
+			cost = c;
 			location = l;
 		}
 		
