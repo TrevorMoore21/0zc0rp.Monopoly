@@ -159,7 +159,7 @@ public class Player
 									else
 										{
 										//this is broken and I don't know how to fix it at this time
-										//(Properties) MonopDriver.board[playerLocation]).setNumberOfHousesOwned(((Properties) MonopDriver.board[playerLocation]).getNumberOfHousesOwned()+1);
+										((Properties) MonopDriver.board[playerLocation]).setNumberOfHousesOwned(((Properties) MonopDriver.board[playerLocation]).getNumberOfHousesOwned()+1);
 										}
 								}
 						}
