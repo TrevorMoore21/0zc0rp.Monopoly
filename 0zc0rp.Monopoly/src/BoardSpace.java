@@ -7,7 +7,7 @@ public class BoardSpace
 		public BoardSpace()
 		{}
 		
-		public BoardSpace(String t , String n, int c, String o, int l)
+		public BoardSpace(String t , String n, String o, int c, int l)
 		{
 			type = t;
 			name = n;

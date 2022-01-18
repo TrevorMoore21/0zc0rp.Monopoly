@@ -7,8 +7,9 @@ public class Railroads extends BoardSpace
 		private int threeOwnedRent;
 		private int fourOwnedRent;
 		
-		public Railroads(String n, String o, int c, int l, int onR, int twR, int thR, int foR)
+		public Railroads(String t, String n, String o, int c, int l, int onR, int twR, int thR, int foR)
 		{
+			setType(t);
 			setName(n);
 			setOwner(o);
 			setCost(c);
