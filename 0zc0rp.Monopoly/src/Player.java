@@ -70,9 +70,10 @@ public class Player
 	{
 		System.out.println("Press space to roll the dice.");
 		//String rollDiceInput = 
-		userInput.nextLine();
 		
 		int playerRoll = DiceRoller.rollDice(2,6);
+		
+		
 		
 		if((playerLocation + playerRoll) < 39)
 			{
@@ -81,9 +82,11 @@ public class Player
 		else
 			{
 				playerLocation = (playerLocation + playerRoll) - 40;
+				
 				playerMoney += 200;
 				System.out.println("You passsed GO and collected $200");
 			}
+		System.out.println("THIS EQUALS" + playerLocation);
 		
 		System.out.println("You rolled: " + playerRoll + "\nYou landed on " + MonopDriver.board[playerLocation].getName());
 		
