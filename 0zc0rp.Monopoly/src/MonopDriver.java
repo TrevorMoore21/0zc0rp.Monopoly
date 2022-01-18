@@ -43,11 +43,7 @@ public class MonopDriver
 			        					
 			        		  }
 			        	  
-			        	 
-			        	  
-			        	  
-			        	  
-			        	  
+			      
 			        	  else if(file.next().equals("Railroad"))
 			        		  {
 			        			  board[i] = new Railroads("Railroads",
