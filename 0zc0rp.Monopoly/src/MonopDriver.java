@@ -59,7 +59,7 @@ public class MonopDriver
 			        					  DiceRoller.rollDice(2,6)*4,
 			        					  DiceRoller.rollDice(2,6)*10);
 			        		  }
-			        	  else
+			        	  else if(file.next().equals("Other")) 
 			        		  {
 			        			  board[i] = new BoardSpace(file.next(),
 			        					  file.next(),

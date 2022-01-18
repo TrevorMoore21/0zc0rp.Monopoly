@@ -14,7 +14,7 @@ Property St.Charles_Place 140 none 11 false 10 100 50 150 450 750 0 Pink
 Utility Electric_Company 150 none 12
 Property States_Avenue 140 none 13 false 10 100 50 150 450 750 0 Pink
 Property Virginia_Avenue 160 none 14 false 12 100 60 180 500 900 0 Pink
-Railroad Pennsylvania_Railroad 200 none 15 25 50 100 200
+Railroad Railroad Pennsylvania_Railroad 200 none 15 25 50 100 200
 Property St.James_Place 180 none 16 false 14 100 70 200 550 950 0 Orange
 Other Community_Chest 0 none 17
 Property Tennessee_Avenue 180 none 18 false 14 100 70 200 550 950 0 Orange
