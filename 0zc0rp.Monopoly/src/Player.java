@@ -283,7 +283,7 @@ public class Player
 							playerMoney -= MonopDriver.board[playerLocation].getCost();;
 						}
 					
-					
+					//chance cards
 					else if(MonopDriver.board[playerLocation].getName().equals("Chance"))
 						{
 							int chanceNumber = (int) (Math.random() * 3) + 1;
@@ -304,6 +304,7 @@ public class Player
 									playerMoney = playerMoney + 100;
 								}
 						}
+					//community chest
 					else if(MonopDriver.board[playerLocation].getName().equals("Community Chest"))
 						{
 							int chestNumber = (int) (Math.random() * 3) + 1;
