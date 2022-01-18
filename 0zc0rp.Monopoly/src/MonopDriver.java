@@ -23,7 +23,7 @@ public class MonopDriver
 			        	   *each line will be one square
 			        	   *type cost owner location
 			        	   *then whatever applies to each thing (properties or taxes etc.)
-			        	  */
+			        	  // attached monopoly doc
 			        	  if(file.next().equals("Property"))
 			        		  {
 			        			  board[i] = new Properties("Property",
