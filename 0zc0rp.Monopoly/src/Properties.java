@@ -11,11 +11,11 @@ public class Properties extends BoardSpace
 		private int numberOfHousesOwned;
 		private String color;
 
-		public Properties(String n, int c, String o, int l, boolean d , int br , int hh, int or , int tr , int thr , int hr, int nOH, String co)
+		public Properties(String n, String o, int c, int l, boolean d , int br , int hh, int or , int tr , int thr , int hr, int nOH, String co)
 		{
 			setName(n);
-			setCost(c);
 			setOwner(o);
+			setCost(c);
 			setLocation(l);
 			developing = d;
 			basicRent = br;

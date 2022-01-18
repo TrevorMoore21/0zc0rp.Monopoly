@@ -4,11 +4,11 @@ public class Utilities extends BoardSpace
 		private int oneOwnedRent;
 		private int twoOwnedRent;
 		
-		public Utilities(String n, int c, String o, int l, int oR, int tR)
+		public Utilities(String n, String o, int c, int l, int oR, int tR)
 			{
 				setName(n);
-				setCost(c);
 				setOwner(o);
+				setCost(c);
 				setLocation(l);
 				oneOwnedRent = oR;
 				twoOwnedRent = tR;
