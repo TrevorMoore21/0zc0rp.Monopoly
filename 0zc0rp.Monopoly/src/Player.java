@@ -86,7 +86,6 @@ public class Player
 				playerMoney += 200;
 				System.out.println("You passsed GO and collected $200");
 			}
-		System.out.println("THIS EQUALS" + playerLocation);
 		
 		System.out.println("You rolled: " + playerRoll + "\nYou landed on " + MonopDriver.board[playerLocation].getName());
 		

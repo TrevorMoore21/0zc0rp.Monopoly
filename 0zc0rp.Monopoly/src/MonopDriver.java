@@ -18,65 +18,80 @@ public class MonopDriver
 			     
 			      for( int i = 0; i < numberOfLines; i++ )
 			          {
-			        	  /*the txt file will be structured as follows:
-			        	   * the first line will be an int that represents the amount of lines that follow it (think A+)
-			        	   *each line will be one square
-			        	   *type cost owner location
-			        	   *then whatever applies to each thing (properties or taxes etc.)
-			        	  */
-			        	  if(file.next().equals("Property"))
+			        	  
+			        	  String type = file.next();
+			        	  
+			        	  
+			        	  if(type.equals("Property"))
 			        		  {
-			        			  board[i] = new Properties("Property",
-			        					  file.next(), 
-			        					  file.next(),
-			        					  file.nextInt(), 
-			        					  file.nextInt(), 
-			        					  file.nextBoolean(), 
-			        					  file.nextInt(),
-			        					  file.nextInt(),
-			        					  file.nextInt(),
-			        					  file.nextInt(),
-			        					  file.nextInt(),
-			        					  file.nextInt(),
-			        					  file.nextInt(),
-			        					  file.next());
+			        			 
+			        					 String n = file.next();
+			        					  String o = file.next();
+			        					  int c = file.nextInt();
+			        					  int l = file.nextInt();
+			        					  boolean d = file.nextBoolean();
+			        					  int br = file.nextInt();
+			        					  int hh = file.nextInt();
+			        					  int r1 = file.nextInt();
+			        					  int r2 = file.nextInt();
+			        					  int r3 = file.nextInt();
+			        					  int hr = file.nextInt();
+			        					  int hn = file.nextInt();
+			        					  String co = file.next();
+			        					  
+			        					  
+			        			  board[i] = new Properties("Property", n, o, c, l, d, br, hh, r1, r2, r3, hr, hn, co);
+			        			  
 			        					
 			        		  }
 			        	  
 			      
-			        	  else if(file.next().equals("Railroad"))
+			        	  else if(type.equals("Railroad"))
 			        		  {
-			        			  board[i] = new Railroads("Railroads",
-			        					  file.next(), 
-			        					  file.next(),
-			        					  file.nextInt(), 
-			        					  file.nextInt(), 
-			        					  file.nextInt(), 
-			        					  file.nextInt(), 
-			        					  file.nextInt(), 
-			        					  file.nextInt());
-			        				
+			        			  
+			        					  String n = file.next();
+			        			  		String o = file.next();
+			        			  		int c = file.nextInt();
+			        			  		int l = file.nextInt();
+			        					int r1 = file.nextInt();
+			        					int r2 = file.nextInt(); 
+			        					int r3 = file.nextInt(); 
+			        					int r4 = file.nextInt();
+			        					board[i] = new Railroads("Railroads", n, o, c, l, r1,r2, r3, r4);
 			        		  }
 			        	  
-			        	  else if(file.next().equals("Utilities"))
+			        	  else if(type.equals("Utilities"))
 			        		  {
-			        			  board[i] = new Utilities("Utilities",
-			        					  file.next(), 
-			        					  file.next(),
-			        					  file.nextInt(), 
-			        					  file.nextInt(), 
-			        					  DiceRoller.rollDice(2,6)*4,
-			        					  DiceRoller.rollDice(2,6)*10);
+			        			 
+			        			  String n = file.next();
+		        			  		String o = file.next();
+		        			  		int c = file.nextInt();
+		        			  		int l = file.nextInt();
+			        				int dr1 = DiceRoller.rollDice(2,6)*4;
+			        				int dr2 = DiceRoller.rollDice(2,6)*10;
+			        					  
+			        			    board[i] = new Utilities("Utilities", n, o, c, l, dr1, dr2);
+			        					  
+			        					
 			        		  }
-			        	  else if(file.next().equals("Other")) 
+			        	  else if(type.equals("Other")) 
 			        		  {
-			        			  board[i] = new BoardSpace("Other",
-			        					  file.next(),
-			        					  file.next(),
-			        					  file.nextInt(),
-			        					  file.nextInt());
+			        			  String n = file.next();
+		        			  		String o = file.next();
+		        			  		int c = file.nextInt();
+		        			  		int l = file.nextInt();
+			        					  
+		        			  		board[i] = new BoardSpace("Other", n, o, c, l);
 			        		  }
 			          }
+			      
+			      
+			      for (BoardSpace b : board)
+			    	  {
+			    		  System.out.println(b);
+			    		  
+			    		  
+			    	  }
 			      
 			      Player.greetPlayer();
 			      while(Player.stillPlaying == true)
