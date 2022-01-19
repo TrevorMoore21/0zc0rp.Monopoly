@@ -18,12 +18,8 @@ public class MonopDriver
 			     
 			      for( int i = 0; i < numberOfLines; i++ )
 			          {
-			        	  /*the txt file will be structured as follows:
-			        	   * the first line will be an int that represents the amount of lines that follow it (think A+)
-			        	   *each line will be one square
-			        	   *type cost owner location
-			        	   *then whatever applies to each thing (properties or taxes etc.)
-			        	  // attached monopoly doc
+			        	  // if statement
+			        	  
 			        	  if(file.next().equals("Property"))
 			        		  {
 			        			  board[i] = new Properties("Property",
