@@ -4,15 +4,15 @@ public class Utilities extends BoardSpace
 		private int oneOwnedRent;
 		private int twoOwnedRent;
 		
-		public Utilities(String t, String n, String o, int c, int l, int oR, int tR)
+		public Utilities(String t, String n, String o, int c, int l)
 			{
 				setType(t);
 				setName(n);
 				setOwner(o);
 				setCost(c);
 				setLocation(l);
-				oneOwnedRent = oR;
-				twoOwnedRent = tR;
+//				oneOwnedRent = oR;
+//				twoOwnedRent = tR;
 			}
 
 		public int getOneOwnedRent()
@@ -34,6 +34,5 @@ public class Utilities extends BoardSpace
 			{
 				this.twoOwnedRent = twoOwnedRent;
 			}
-		// Spongebob is done
 		
 	}
