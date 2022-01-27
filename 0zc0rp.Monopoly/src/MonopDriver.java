@@ -12,39 +12,32 @@ public class MonopDriver
 		static Scanner file;
 		static Player player1 = new Player(0, false, 1500, true, "none", 0, new ArrayList<BoardSpace>());
 		static Player player2 = new Player(0, false, 1500, true, "none", 0, new ArrayList<BoardSpace>());
+		
 		public static void main(String[] args) throws FileNotFoundException
 			{
 				selectVersion();
-			    greetPlayer1();
+			    greetPlayer();
 			    
 			      while(Player.stillPlaying == true)
 			    	  {
 			    		  if(Player.inJail == false)
 			    			  {
-			    				  Player.turnMenu();
+			    				  Turn.turnMenu();
 			    			  }
 			    		  else
 			    			  {
-			    				  Player.inJailTurn();
+			    				  Turn.inJailTurn();
 			    			  }
 			    	  }
 			    
 			}
 		
-		public static void greetPlayer1()
+		public static void greetPlayer()
 			{
 				System.out.println("What is your name?");
 				input = userInput.nextLine();
 				player1.setPlayerName(input);
 				System.out.println("Welcome, " + player1.getPlayerName() + "!");
-			}
-			
-		public static void greetPlayer2()
-			{
-				System.out.println("What is your name?");
-				input = userInput.nextLine();
-				player2.setPlayerName(input);
-				System.out.println("Welcome, " + player2.getPlayerName() + "!");
 			}
 		
 		public static void selectVersion() throws FileNotFoundException

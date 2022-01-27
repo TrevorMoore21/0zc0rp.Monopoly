@@ -159,31 +159,11 @@ public class Player
 			inJail = true;
 		}
 	
-	public static void inJailTurn()
+	public static void buyProperty()
 		{
-			//need to implement cards soon
-			System.out.println("You are in jail\nWould you like to...\n1) Pay the $50 fee\n2) Roll for doubles");
-			menuInput = userInput.nextInt();
-			
-			if(menuInput == 1)
-				{
-					freeParkingMoney += 50;
-					playerMoney -= 50;
-					System.out.println("You have now payed the fee and are free to go.");
-					inJail = false;
-				}
-			else
-				{
-					DiceRoller.rollDice(2,6);
-					if(DiceRoller.doubles == true)
-						{
-							System.out.println("You rolled doubles and are free to go.");
-							inJail = false;
-						}
-					else
-						{
-							System.out.println("You failed to roll doubles.");
-						}
-				}
+			MonopDriver.board[playerLocation].setOwner(playerName);
+			playerMoney -= MonopDriver.board[playerLocation].getCost();
+			checkForBankruptcy();
+			inventory.add(MonopDriver.board[playerLocation]);
 		}
 	}
