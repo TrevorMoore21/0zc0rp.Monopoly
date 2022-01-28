@@ -4,12 +4,14 @@ public class Cards extends BoardSpace
 	private String type, content;
 	private int value;
 	
-	public Cards(String t, String c, int v)
+	public Cards(String t, int v, String c)
 	{
 		type = t;
 		content = c;
-		value = v;
 	}
+	
+	public Cards()
+	{}
 
 	public String getType()
 		{

@@ -7,11 +7,16 @@ import java.io.IOException;
 public class MonopDriver
 	{	
 		static Scanner userInput = new Scanner(System.in);
-		static String input;
+		static Scanner userInputString = new Scanner(System.in);
+		static String inputString;
 		static BoardSpace[] board = new BoardSpace[40];
+		static ArrayList<Cards> chance = new ArrayList<Cards>();
+		static ArrayList<Cards> communityChest = new ArrayList<Cards>();
 		static Scanner file;
-		static Player player1 = new Player(0, false, 1500, true, "none", 0, new ArrayList<BoardSpace>());
-		static Player player2 = new Player(0, false, 1500, true, "none", 0, new ArrayList<BoardSpace>());
+		static Scanner fileChance;
+		static Scanner fileCC;
+		static Player player1;
+		static Player player2;
 		
 		public static void main(String[] args) throws FileNotFoundException
 			{
@@ -34,10 +39,14 @@ public class MonopDriver
 		
 		public static void greetPlayer()
 			{
-				System.out.println("What is your name?");
-				input = userInput.nextLine();
-				player1.setPlayerName(input);
+				System.out.println("Player 1, what is your name?");
+				inputString = userInputString.nextLine();
+				player1 = new Player(0, false, 1500, true, inputString, 0, new ArrayList<BoardSpace>());
 				System.out.println("Welcome, " + player1.getPlayerName() + "!");
+				System.out.println("Player 2, what is your name?");
+				inputString = userInputString.nextLine();
+				player2 = new Player(0, false, 1500, true, inputString, 0, new ArrayList<BoardSpace>());
+				System.out.println("Welcome, " + player2.getPlayerName() + "!");
 			}
 		
 		public static void selectVersion() throws FileNotFoundException
@@ -51,14 +60,17 @@ public class MonopDriver
 				}
 			else if(input == 2)
 				{
-					file = new Scanner(new File("SpongeBobMonopoly.txt"));
+					file = new Scanner(new File( "SpongeBobMonopoly.txt" ));
 				}
 			else
 				{
+					System.out.println("Sorry, that's not an option...\nTry again!");
 					selectVersion();
 				}
 			
 			fillBoard(file);
+			//fillChance(fileChance);
+			//fillCommunityChest(fileCC);
 		}
 		
 		public static void fillBoard(Scanner b)
@@ -128,5 +140,20 @@ public class MonopDriver
 	    		  System.out.println(s);
 	    	  }*/
 		}
+		
+		public static void fillChance(Scanner c)
+			{
+			int numberOfLines = c.nextInt();
+		     
+		      for( int i = 0; i < numberOfLines; i++ )
+		          {
+		        	  String type = c.next();
+		        	  
+		        	  if(type.equals("Move"))
+		        		  {
+		        			  int v = fileChance.nextInt();
+		        		  }
+		          }
+			}
 
 	}

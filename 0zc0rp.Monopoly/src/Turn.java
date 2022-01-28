@@ -26,19 +26,19 @@ public class Turn
 					}
 			}
 		
-		public static void movePlayer()
+		public static void movePlayer(Player p)
 			{
 				int playerRoll = DiceRoller.rollDice(2,6);
 				if(freeParking == false)
 					{
-					if((Player.getPlayerLocation() + playerRoll) < 39)
+					if((p.getPlayerLocation() + playerRoll) < 39)
 						{
-							Player.setPlayerLocation(Player.getPlayerLocation() + playerRoll);
+							p.setPlayerLocation(p.getPlayerLocation() + playerRoll);
 						}
 					else
 						{
-							Player.setPlayerLocation((Player.getPlayerLocation() + playerRoll) - 39);
-							Player.setPlayerMoney(Player.getPlayerMoney() + 200);
+							p.setPlayerLocation((p.getPlayerLocation() + playerRoll) - 39);
+							p.setPlayerMoney(p.getPlayerMoney() + 200);
 							System.out.println("You passsed GO and collected $200");
 						}
 					}

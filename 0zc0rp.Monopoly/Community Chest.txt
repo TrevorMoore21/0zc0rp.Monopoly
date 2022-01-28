@@ -1,17 +1,17 @@
 16
-Advance GO
-Deposit 200
-Pay 50
-Deposit 50
+Move GO
+Money 200
+Money -50
+Money 50
 GetOutOfJail
 GoToJail
-Deposit 100
-Deposit 20
-Deposit 10
-Deposit 100
-Pay 100
-Pay 50
-Pay 25
-Pay 40 115
-Deposit 10
-Deposit 100
+Money 100
+Money 20
+Money 10
+Money 100
+Money -100
+Money -50
+Money -25
+MoneyPer -40 -115
+Money 10
+Money 100
