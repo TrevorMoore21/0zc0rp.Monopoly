@@ -3,15 +3,15 @@ import java.util.Scanner;
 
 public class Player
 	{
-	static int playerLocation = 0;
-	static boolean inJail = false;
-	static int playerMoney = 1500;
-	static boolean stillPlaying = true;
-	static String playerName;
-	static int menuInput;
-	static int timesRolledDoubles = 0;
-	static Scanner userInput = new Scanner(System.in);
-	static ArrayList<BoardSpace> inventory = new ArrayList<BoardSpace>();
+	 int playerLocation = 0;
+	 boolean inJail = false;
+	 int playerMoney = 1500;
+	 boolean stillPlaying = true;
+	 String playerName;
+	 int menuInput;
+	 int timesRolledDoubles = 0;
+	 Scanner userInput = new Scanner(System.in);
+	 ArrayList<BoardSpace> inventory = new ArrayList<BoardSpace>();
 	
 	public Player(int pL, boolean iJ, int pM, boolean sP, String pN, int tD, ArrayList<BoardSpace> i)
 	{
@@ -24,146 +24,136 @@ public class Player
 		inventory = i;
 	}
 
-	public static int getPlayerLocation()
+	public int getPlayerLocation()
 		{
 			return playerLocation;
 		}
 
-
-	public static void setPlayerLocation(int playerLocation)
+	public void setPlayerLocation(int playerLocation)
 		{
-			Player.playerLocation = playerLocation;
+			this.playerLocation = playerLocation;
 		}
 
-
-	public static boolean isInJail()
+	public boolean isInJail()
 		{
 			return inJail;
 		}
 
-
-	public static void setInJail(boolean inJail)
+	public void setInJail(boolean inJail)
 		{
-			Player.inJail = inJail;
+			this.inJail = inJail;
 		}
 
-
-	public static int getPlayerMoney()
+	public int getPlayerMoney()
 		{
 			return playerMoney;
 		}
 
-
-	public static void setPlayerMoney(int playerMoney)
+	public void setPlayerMoney(int playerMoney)
 		{
-			Player.playerMoney = playerMoney;
+			this.playerMoney = playerMoney;
 		}
 
-
-	public static boolean isStillPlaying()
+	public boolean isStillPlaying()
 		{
 			return stillPlaying;
 		}
 
-
-	public static void setStillPlaying(boolean stillPlaying)
+	public void setStillPlaying(boolean stillPlaying)
 		{
-			Player.stillPlaying = stillPlaying;
+			this.stillPlaying = stillPlaying;
 		}
 
-
-	public static String getPlayerName()
+	public String getPlayerName()
 		{
 			return playerName;
 		}
 
-
-	public static void setPlayerName(String playerName)
+	public void setPlayerName(String playerName)
 		{
-			Player.playerName = playerName;
+			this.playerName = playerName;
 		}
 
-
-	public static int getMenuInput()
+	public int getMenuInput()
 		{
 			return menuInput;
 		}
 
-	public static void setMenuInput(int menuInput)
+	public void setMenuInput(int menuInput)
 		{
-			Player.menuInput = menuInput;
+			this.menuInput = menuInput;
 		}
 
-	public static int getTimesRolledDoubles()
+	public int getTimesRolledDoubles()
 		{
 			return timesRolledDoubles;
 		}
 
-	public static void setTimesRolledDoubles(int timesRolledDoubles)
+	public void setTimesRolledDoubles(int timesRolledDoubles)
 		{
-			Player.timesRolledDoubles = timesRolledDoubles;
+			this.timesRolledDoubles = timesRolledDoubles;
 		}
 
-	public static Scanner getUserInput()
+	public Scanner getUserInput()
 		{
 			return userInput;
 		}
 
-	public static void setUserInput(Scanner userInput)
+	public void setUserInput(Scanner userInput)
 		{
-			Player.userInput = userInput;
+			this.userInput = userInput;
 		}
 
-
-	public static ArrayList<BoardSpace> getInventory()
+	public ArrayList<BoardSpace> getInventory()
 		{
 			return inventory;
 		}
 
-	public static void setInventory(ArrayList<BoardSpace> inventory)
+	public void setInventory(ArrayList<BoardSpace> inventory)
 		{
-			Player.inventory = inventory;
+			this.inventory = inventory;
 		}
 	
-	public static void addInventory()
+	public static void addInventory(Player p)
 		{
-			inventory.add(MonopDriver.board[playerLocation]);
+			p.inventory.add(MonopDriver.board[p.getPlayerLocation()]);
 		}
 	
-	public static void displayPlayerStats()
+	public static void displayPlayerStats(Player p)
 	{
-		System.out.println("Your name is: " + playerName);
-		System.out.println("Current balance: $" + playerMoney);
+		System.out.println("Your name is: " + p.getPlayerName());
+		System.out.println("Current balance: $" + p.getPlayerMoney());
+		System.out.println("Your location is space: " + p.getPlayerLocation());
 		System.out.println("Your owned spaces:");
 		
-		for(BoardSpace k : inventory)
+		for(BoardSpace k : p.getInventory())
 			{
 				System.out.print(k.getType() + " ");
 				System.out.println(k.getName());
 			}
 	}
 
-	public static void checkForBankruptcy()
+	public static void checkForBankruptcy(Player p)
 		{
-			if(playerMoney <= 0)
+			if(p.getPlayerMoney() <= 0)
 				{
 					System.out.println("You've gone bankrupt!");
-					stillPlaying = false;
+					p.setStillPlaying(false);
 				}		
 		}
 	
-	public static void goToJail()
+	public static void goToJail(Player p)
 		{
-			playerLocation = 10;
+			p.setPlayerLocation(10);
 			System.out.println("You are now in jail");
-			inJail = true;
+			p.setInJail(true);
 		}
 	
-	public static void buyProperty()
+	public static void buyProperty(Player p)
 		{
-			MonopDriver.board[playerLocation].setOwner(playerName);
-			playerMoney -= MonopDriver.board[playerLocation].getCost();
-			checkForBankruptcy();
-			inventory.add(MonopDriver.board[playerLocation]);
+			MonopDriver.board[p.getPlayerLocation()].setOwner(p.getPlayerName());
+			p.setPlayerMoney(p.getPlayerMoney() - MonopDriver.board[p.getPlayerLocation()].getCost());
+			checkForBankruptcy(p);
+			p.addInventory(p);
 		}
 	}
